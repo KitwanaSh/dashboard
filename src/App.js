@@ -5,6 +5,7 @@ import { TooltipComponent } from '@syncfusion/ej2-react-popups'
 
 import './App.css'
 const App = () => {
+  const activeMenue = true;
   return (
     <div>
       <BrowserRouter>
@@ -12,11 +13,57 @@ const App = () => {
           <div className='fixed right-4 bottom-4' style={{ zIndex: '1000'}}>
             <TooltipComponent content="Settings" position="Top">
               <button type="button"
-                className='text-3xl p-3 hover:drop-shadow-xl hover:bg-light-gray'
+                className='text-3xl p-3 hover:drop-shadow-xl hover:bg-light-gray text-white'
+                style={{ background: 'blue', borderRadius: '50%' }}
               >
                 <FiSettings />
               </button>
             </TooltipComponent>
+          </div>
+          {activeMenue ? (
+            <div className='w-72 fixed sidebar dark:bg-secondary-dark-bg bg-white'>
+              SideBar
+            </div>
+          ) : (
+            <div className='w-0 dark:bg-secondary-dark-bg'>
+              SideBar
+            </div>
+          )}
+          <div className={
+            `dark:bg-main-bg bg-main-bg w-full min-h-screen ${activeMenue ? 'md:ml-72' : 'flex-2'}`
+          }>
+            <div className='fixed md:static bg-main-bg dark:b-main-dark-bg navbar w-full'>
+              navbar
+            </div>
+
+          </div>
+          <div>
+            <Routes>
+              {/* Dashboard */}
+              <Route path="/" element="ECommerce" />
+              <Route path='/ecommerce' element="ECommerce" />
+
+              {/* Pages */}
+              <Route path='/Orders' element = "orders"/>
+              <Route path='/Employees' element = "employees"/>
+              <Route path='/Customers' element = "customers"/>
+
+              {/* Apps */}
+              <Route path='/kanban' element = "Kanban"/>
+              <Route path='/editor' element = "Editor"/>
+              <Route path='/calendar' element = "Calendar"/>
+              <Route path='/color-picker' element = "ColorPicker"/>
+
+              {/* Charts */}
+              <Route path='/line' element = "Line"/>
+              <Route path='/area' element = "Area"/>
+              <Route path='/bar' element = "Bar"/>
+              <Route path='/pie' element = "Pie"/>
+              <Route path='/finacial' element = "Financial"/>
+              <Route path='/color-mapping' element = "ColorMapping"/>
+              <Route path='/pyramid' element = "Pyramid"/>
+              <Route path='/stacked' element = "Stacked"/>
+            </Routes>
           </div>
         </div>
       </BrowserRouter>
