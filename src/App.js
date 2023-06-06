@@ -4,7 +4,7 @@ import { FiSettings } from 'react-icons/fi';
 import { TooltipComponent } from '@syncfusion/ej2-react-popups';
 
 import { Navbar, Footer, Sidebar, ThemeSettings } from "./components";
-import { Ecommerce, Orders, Calendar, Employees, Stacked, Pyramid, Kanban, Customers, Area, Bar, Pie, Financial, ColorPicker, ColorMapping, Editor } from "./pages";
+import { Ecommerce, Orders, Calendar, Employees, Stacked, Pyramid, Kanban, Customers, Line, Area, Bar, Pie, Financial, ColorPicker, ColorMapping, Editor } from "./pages";
 
 
 import './App.css'
@@ -33,7 +33,7 @@ const App = () => {
               <Sidebar />
             </div>
           )}
-          <div className={<
+          <div className={
             `darkbg} />-main-bg bg-main-bg w-full min-h-screen ${activeMenue ? 'md:ml-72' : 'flex-2'}`
           }>
             <div className='fixed md:static bg-main-bg dark:b-main-dark-bg navbar w-full'>
@@ -44,8 +44,8 @@ const App = () => {
           <div>
             <Routes>
               {/* Dashboard */}
-              <Route path="/" element={<ECommerce />} />
-              <Route path='/ecommerce' element={<ECommerce />} />
+              <Route path="/" element={<Ecommerce />} />
+              <Route path='/ecommerce' element={<Ecommerce />} />
 
               {/* Pages */}
               <Route path='/orders' element = {<Orders/>} />
