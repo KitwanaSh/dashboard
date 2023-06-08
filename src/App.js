@@ -3,14 +3,14 @@ import { BrowserRouter, Routes, Route} from  'react-router-dom';
 import { FiSettings } from 'react-icons/fi';
 import { TooltipComponent } from '@syncfusion/ej2-react-popups';
 
-import { useStateContext } from './contexts/ContextProvider';
+
 import { Navbar, Footer, Sidebar, ThemeSettings } from "./components";
 import { Ecommerce, Orders, Calendar, Employees, Stacked, Pyramid, Kanban, Customers, Line, Area, Bar, Pie, Financial, ColorPicker, ColorMapping, Editor } from "./pages";
-
+import { useStateContext } from './contexts/ContextProvider';
 
 import './App.css'
 const App = () => {
-  const { activeMenue } = useStateContext();
+  const { activeMenu } = useStateContext();
   return (
     <div>
       <BrowserRouter>
@@ -25,7 +25,7 @@ const App = () => {
               </button>
             </TooltipComponent>
           </div>
-          {activeMenue ? (
+          {activeMenu ? (
             <div className='w-72 fixed sidebar dark:bg-secondary-dark-bg bg-white'>
               <Sidebar />
             </div>
@@ -35,7 +35,7 @@ const App = () => {
             </div>
           )}
           <div className={
-            `darkbg} />-main-bg bg-main-bg w-full min-h-screen ${activeMenue ? 'md:ml-72' : 'flex-2'}`
+            `darkbg} />-main-bg bg-main-bg w-full min-h-screen ${activeMenu ? 'md:ml-72' : 'flex-2'}`
           }>
             <div className='fixed md:static bg-main-bg dark:b-main-dark-bg navbar w-full'>
               <Navbar />
