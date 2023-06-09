@@ -27,7 +27,7 @@ const Navbar = () => {
   useEffect(() => {
     const handleResize = () => setScreenSize(window.innerWidth);
 
-    window.addEventListner('resize', handleResize);
+    window.addEventListener('resize', handleResize);
 
     handleResize();
 
@@ -74,6 +74,7 @@ const Navbar = () => {
             <img 
               className='rounded-full h-8 w-8'
               src={avatar}
+              alt=""
             />
             <p>
               <span className='text-gray-400 text-14'>Hi, </span> {' '}
