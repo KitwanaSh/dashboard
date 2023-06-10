@@ -21,8 +21,10 @@ export default class SparkLine extends React.PureComponent
     yName='yval'
     tooltipSettings={{
       visible: true,
-      format: 'X : ${x-axis}  ,  Y : ${y-axis}',
-      trackLineSettings: { visible: true }
+      format: '${xval} : data ${yval}',
+      trackLineSettings: {
+        visible: true
+      }
     }}
     >
       <Inject services={[SparklineTooltip]} />
