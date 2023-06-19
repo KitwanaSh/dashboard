@@ -14,13 +14,20 @@ const Cart = () => {
       <div className="float-right h-screen  duration-1000 ease-in-out dark:text-gray-200 transition-all dark:bg-[#484B52] bg-white md:w-400 p-8">
         <div className="flex justify-between items-center">
           <p className="font-semibold text-lg">Shopping Cart</p>
-          <Button
+          {/* <Button
             icon={<MdOutlineCancel />}
             color="rgb(153, 171, 180)"
             bgHoverColor="light-gray"
             size="2xl"
             borderRadius="50%"
-          />
+          /> */}
+          <button
+            type="button"
+            style={{ color: 'rgb(153, 171, 180)', borderRadius: '50%'}}
+            className='text-2xl p-3 hover:drop-shadow-xl hover:bg-light-gray'
+          >
+            <MdOutlineCancel />
+          </button>
         </div>
         {cartData?.map((item, index) => (
           <div key={index}>
