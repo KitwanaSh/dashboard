@@ -1,4 +1,4 @@
-import { colorCollections } from '@syncfusion/ej2/treemap';
+// import { colorCollections } from '@syncfusion/ej2/treemap';
 import React, { createContext, useContext, useState } from 'react';
 
 const StateContext = createContext();
